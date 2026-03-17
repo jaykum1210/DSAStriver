@@ -27,7 +27,6 @@ public class Practice3 {
 
         System.out.println("Enter How Many Characters Want to Check :");
         int q = sc.nextInt();
-//        sc.nextInt();
         System.out.println("Enter " + q + " Characters : ");
         for (int i = 0;i<q;i++){
             int num = sc.nextInt();
