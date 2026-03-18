@@ -1,21 +1,24 @@
 package LearnBasics.Hashing;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Scanner;
 
-public class Practice5 {
-    public static List<List<Integer>> fre(int[] arr){
+public class Question2 {
+    public static int fre(int[] arr){
         HashMap<Integer,Integer> hash = new HashMap<>();
         for (int e : arr){
             hash.put(e,hash.getOrDefault(e,0)+1);
         }
-        List<List<Integer>> result = new ArrayList<>();
+        int maxkey = 0;
+        int max = 0;
         for (int e : hash.keySet()){
-            List<Integer> li = new ArrayList<>();
-            li.add(e);
-            li.add(hash.get(e));
-            result.add(li);
+            if (max<hash.get(e)){
+                maxkey = e;
+                max = hash.get(e);
+            }
         }
-        return result;
+        return maxkey;
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -26,8 +29,8 @@ public class Practice5 {
         for (int i = 0;i<a;i++){
             arr[i] = sc.nextInt();
         }
-        List<List<Integer>> result = fre(arr);
-
-        System.out.println(result);
+        int most = fre(arr);
+        System.out.println("Most Frequent : " + most);
+        return;
     }
 }
