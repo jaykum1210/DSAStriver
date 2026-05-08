@@ -7,15 +7,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Question2 {
-    public static List<Integer> majorityElementTwo(int[] nums){
+    public static List<Integer> majorityElementTwo(int[] nums) {
         HashMap<Integer,Integer> map = new HashMap<>();
-        for (int i = 0;i<nums.length;i++){
-            map.put(nums[i],map.getOrDefault(nums[i],0)+1);
-        }
         List<Integer> list = new ArrayList<>();
-        for (int e : map.keySet()){
-            if (map.get(e)>nums.length/2){
-                list.add(e);
+        for(int i = 0; i < nums.length; i++){
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+            if(map.get(nums[i]) > nums.length / 3 && !list.contains(nums[i])){
+                list.add(nums[i]);
             }
         }
         return list;
