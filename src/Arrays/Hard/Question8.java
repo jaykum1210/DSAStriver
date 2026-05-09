@@ -7,24 +7,10 @@ import java.util.Scanner;
 
 public class Question8 {
     public static void merge(int[] nums1, int m, int[] nums2, int n){
-        int x = 0;
-        int y = 0;
-        for (int i = 0;i<m+n;i++){
-            if (nums1[x]>nums2[y]){
-                int temp = nums1[x];
-                nums1[x] = nums2[y];
-                nums2[y] = temp;
-                x++;
-                nums1[i] = nums1[x];
-            }
-            else {
-                int temp = nums1[x];
-                nums1[x] = nums2[y];
-                nums2[y] = temp;
-                y++;
-                nums1[i] = nums1[y];
-            }
+        for (int i = m;i<m+n;i++){
+            nums1[i] = nums2[i-m];
         }
+        Arrays.sort(nums1);
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
