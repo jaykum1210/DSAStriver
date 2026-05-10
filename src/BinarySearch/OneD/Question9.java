@@ -19,7 +19,8 @@ public class Question9 {
         System.out.println("Enter " + a + " Elements : ");
         for(int i = 0; i < a; i++){
             arr[i] = sc.nextInt();
-        }System.out.println("Enter Target : ");
+        }
+        System.out.println("Enter Target : ");
         int target = sc.nextInt();
         System.out.println("Index : " + search(arr,target));
     }
